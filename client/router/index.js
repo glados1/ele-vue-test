@@ -105,6 +105,38 @@ export default new VueRouter({
 							component : Module.test.vue.directive_mixin
 						}
 					]
+				}, {
+					path : 'electron',
+					name : 'electron 测试',
+					icon : 'reorder',
+					component : RouterView.content,
+					children : [
+						{
+							path : '',
+							hidden : true,
+							redirect : (to) => {
+								return 'remote';
+							}
+						}, {
+							path : 'remote',
+							name : 'remote',
+							hidden : false,
+							icon : 'reorder',
+							component : Module.test.electron.remote
+						}, {
+							path : 'capturer',
+							name : 'capturer 测试',
+							hidden : false,
+							icon : 'reorder',
+							component : Module.test.electron.capturer
+						}, {
+							path : 'capturer_pic',
+							name : '屏幕截图',
+							hidden : false,
+							icon : 'reorder',
+							component : Module.test.electron.capturer_pic
+						}
+					]
 				}
 			]
 		}
