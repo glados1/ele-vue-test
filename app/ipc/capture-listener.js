@@ -20,11 +20,16 @@ function objParseInt(obj) {
 }
 
 function init(mainWindow, ipcMain, electron) {
-	ipcMain.on('cut', (event, args) => {
+	var nativeImage = electron.nativeImage;
+	ipcMain.on('cut', (event, cutImg) => {
+	
+		electron.clipboard.writeImage(nativeImage.createFromDataURL(cutImg.cutImgPic));
+		/*
 		objParseInt(args);
 		mainWindow.capturePage(args, (image) => {
 			electron.clipboard.writeImage(image);
 		});
+		*/
 	});
 }
 

@@ -135,6 +135,12 @@ export default new VueRouter({
 							hidden : false,
 							icon : 'reorder',
 							component : Module.test.electron.capturer_pic
+						}, {
+							path : 'capturer_new',
+							name : '新屏幕截图',
+							hidden : false,
+							icon : 'reorder',
+							component : Module.test.electron.capturer_new
 						}
 					]
 				}
