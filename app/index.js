@@ -1,9 +1,17 @@
 'use strict'
+
+/**
+*	ipcListener
+*/
+var  captureListener = require('./ipc/capture-listener');
+
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+
+var ipcMain = electron.ipcMain;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -12,6 +20,7 @@ let mainWindow
 const isDev = process.env.NODE_ENV === 'development'
 
 let config
+
 
 if (isDev) {
 	config = require('../build/config')
@@ -22,6 +31,8 @@ if (isDev) {
 function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({width: 800, height: 600})
+
+	captureListener.init(mainWindow, ipcMain, electron);
 
 	// and load the index.html of the app.
 	const url = isDev ? `http://localhost:${config.port}` : `file://${__dirname}/dist/index.html`
@@ -70,3 +81,4 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
