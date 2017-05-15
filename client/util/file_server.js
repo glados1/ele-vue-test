@@ -100,18 +100,28 @@ class FileServer {
         fs.writeFile(path.join(configDir, 'files.json'), JSON.stringify(filesArray), cb);
     }
 
+    // 设置头部，用于设置文件下载
+    _setHeaders(res, path, stat) {
+    	res.setHeader('Content-Disposition', 'attachment');
+    }
+
     // 初始化本地资源服务器
     _serverInit(cb) {
 		this.server = http.createServer((req, res) => {
 			var reqUrl = URL.parse(req.url);
 			var filename = decodeURI(path.basename(reqUrl.pathname));
 
+			var _self = this;
+
 			if(this.fileMap.has(filename)) {
 				var filepath = this.fileMap.get(filename);
-				send(req, filepath).on('error', (err) => {
-					res.statusCode = err.status || 500;
-					res.end(err.message);
-				}).pipe(res);
+				send(req, filepath)
+					.on('error', (err) => {
+						res.statusCode = err.status || 500;
+						res.end(err.message);
+					})
+					.on('headers', _self._setHeaders)
+					.pipe(res);
 			} else {
 				res.end(filename + ' not found');
 			}

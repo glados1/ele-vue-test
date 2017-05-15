@@ -62,7 +62,7 @@
 		components : {
 			
 		},
-
+		
 		methods : {
 			init() {
 				this.initConfigDir();
@@ -88,7 +88,8 @@
 				var _self = this;
 				fs.readFile(path.join(configDir, 'config.json'), (err, data) => {
 					if(err) {
-						return console.log(err);
+						console.log(err);
+						data = '{}';
 					}
 
 					var config = JSON.parse(data);
