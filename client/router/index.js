@@ -141,6 +141,18 @@ export default new VueRouter({
 							hidden : false,
 							icon : 'reorder',
 							component : Module.test.electron.capturer_new
+						}, {
+							path : 'psd_parser',
+							name : 'psd 转 png',
+							hidden : false,
+							icon : 'reorder',
+							component : Module.test.electron.psd_parser
+						},{
+							path : 'free_share',
+							name : '文件分享工具',
+							hidden : false,
+							icon : 'reorder',
+							component : Module.test.electron.free_share
 						}
 					]
 				}

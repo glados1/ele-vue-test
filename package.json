@@ -7,7 +7,8 @@
     "test": "",
     "build": "webpack --config build/webpack.prod.js",
     "dev": "node build/server.js",
-    "app": "cross-env NODE_ENV=development electron app/"  },
+    "app": "cross-env NODE_ENV=development electron app/"
+  },
   "author": "wjh",
   "license": "MIT",
   "xo": {
@@ -18,14 +19,22 @@
     ]
   },
   "dependencies": {
+    "async": "^2.4.0",
     "babel-runtime": "^6.18.0",
-    "promise-polyfill": "^6.0.2",
-    "vue": "^2.2.0",
-    "vue-router": "^2.0.0",
-    "vue-resource": "1.0.3",
     "element-ui": "^1.1.2",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "promise-polyfill": "^6.0.2",
+    "psd-parser": "^0.1.6",
+    "psychokinesis": "^1.0.6",
+    "qrcode": "^0.8.1",
+    "send": "^0.15.2",
+    "vue": "^2.2.0",
+    "vue-resource": "1.0.3",
+    "vue-router": "^2.0.0",
     "vuex": "^2.0.0",
-    "vuex-router-sync": "^4.0.0"
+    "vuex-router-sync": "^4.0.0",
+    "xdg-basedir": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
