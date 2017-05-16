@@ -4,6 +4,7 @@ import capturer_pic from './capturer_pic';
 import capturer_new from './capturer_new';
 import psd_parser from './psd_parser';
 import free_share from './free_share';
+import music from './music';
 
 export default {
 	remote,
@@ -11,5 +12,6 @@ export default {
 	capturer_pic,
 	capturer_new,
 	psd_parser,
-	free_share
+	free_share,
+	music
 };

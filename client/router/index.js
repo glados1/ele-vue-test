@@ -153,6 +153,12 @@ export default new VueRouter({
 							hidden : false,
 							icon : 'reorder',
 							component : Module.test.electron.free_share
+						}, {
+							path : 'music',
+							name : '音乐播放器',
+							hidden : false,
+							icon : 'reorder',
+							component : Module.test.electron.music
 						}
 					]
 				}
