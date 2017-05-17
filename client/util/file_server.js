@@ -1,4 +1,3 @@
-
 var path = require('path');
 var URL = require('url');
 var fs = require('fs');
@@ -13,6 +12,7 @@ var mime = require('./mime');
 var configDir = path.join(xdgBasedir.config || path.join(os.tmpdir(), '.config'), 'freeshare');
 
 var instance = null;
+
 
 class FileServer {
 	constructor() {

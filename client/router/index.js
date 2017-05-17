@@ -159,6 +159,18 @@ export default new VueRouter({
 							hidden : false,
 							icon : 'reorder',
 							component : Module.test.electron.music
+						}, {
+							path : 'file_upload',
+							name : '文件上传工具',
+							hidden : false,
+							icon : 'reorder',
+							component : Module.test.electron.file_upload
+						}, {
+							path : 'upload_task',
+							name : '上传任务',
+							hidden : false,
+							icon : 'reorder',
+							component : Module.test.electron.upload_task
 						}
 					]
 				}

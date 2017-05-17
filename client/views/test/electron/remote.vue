@@ -21,6 +21,10 @@
 			this.init();
 		},
 
+		activated() {
+			
+		},
+
 		methods : {
 			init() {
 				this.addContextMenu();
@@ -109,13 +113,13 @@
 			},
 
 			addTray() {
-				var image = nativeImage.createFromPath('C:/Users/wjh/Desktop/psd/icon1.jpg');
+				var image = nativeImage.createFromPath('C:/Users/Lenovo/Desktop/开发素材/图片/fruiticons_buttons_apple.png');
 				var tray = new Tray(image);
 
 				var template = [
 					{
 						label : 'show',
-						accelerator : 'CmdOrCtrl+1',
+						accelerator : 'CmdOrCtrl+U',
 						click() {
 							remote.getCurrentWindow().show();
 							
@@ -125,7 +129,7 @@
 						role : 'quit'
 					}, {
 						label : 'hide',
-						accelerator : 'CmdOrCtrl+2',
+						accelerator : 'CmdOrCtrl+T',
 						click(item, focusWindow) {
 							remote.getCurrentWindow().hide();
 						}

@@ -42,7 +42,7 @@
 		methods : {
 			toggleIsPlaying() {
 				var isPlaying = this.isPlaying;
-				console.log(isPlaying);
+	
 				var audio = document.getElementById('audio-player');
 
 				if(isPlaying) {
